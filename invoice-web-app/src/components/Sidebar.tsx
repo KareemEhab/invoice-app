@@ -5,7 +5,7 @@ import sun from "../assets/icon-sun.svg";
 import userImage from "../assets/image-avatar.jpg";
 
 const Sidebar = () => {
-  const { colorMode } = useColorMode();
+  const { colorMode, toggleColorMode } = useColorMode();
 
   return (
     <VStack
@@ -42,6 +42,7 @@ const Sidebar = () => {
           width="1.5rem"
           src={colorMode === "light" ? moon : sun}
           cursor="pointer"
+          onClick={toggleColorMode}
         />
         <Divider />
         <Image maxW="2.5rem" src={userImage} borderRadius="50%" />
