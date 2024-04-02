@@ -9,7 +9,7 @@ interface Props {
   invoices: Invoice[];
 }
 
-const Home = ({ invoices }: Props) => {
+const HomePage = ({ invoices }: Props) => {
   const [selectedStatuses, setSelectedStatuses] = useState([
     "draft",
     "pending",
@@ -45,4 +45,4 @@ const Home = ({ invoices }: Props) => {
   );
 };
 
-export default Home;
+export default HomePage;

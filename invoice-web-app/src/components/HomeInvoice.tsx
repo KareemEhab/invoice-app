@@ -9,6 +9,7 @@ import {
 import { Invoice } from "../hooks/useInvoice";
 import arrow from "../assets/icon-arrow-right.svg";
 import { FaCircle } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 
 interface Props {
   invoice: Invoice;
@@ -21,6 +22,8 @@ const HomeInvoice = ({ invoice }: Props) => {
   const dateColor = useColorModeValue("purple.700", "gray.600");
   const clientNameColor = useColorModeValue("gray.900", "white");
   const { colorMode } = useColorMode();
+
+  const navigate = useNavigate();
 
   return (
     <HStack
@@ -38,6 +41,7 @@ const HomeInvoice = ({ invoice }: Props) => {
         paddingX: "calc(2rem - 1px)",
       }}
       flexDir={{ base: "column", md: "row" }}
+      onClick={() => navigate("/" + invoice.id)}
     >
       <HStack
         width={{ base: "100%", md: "fit-content" }}

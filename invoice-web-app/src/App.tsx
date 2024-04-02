@@ -1,7 +1,9 @@
 import { HStack, useColorModeValue } from "@chakra-ui/react";
-import Home from "./pages/Home";
+import Home from "./pages/HomePage";
 import Sidebar from "./components/Sidebar";
 import data from "../data.json";
+import { Routes, Route, Navigate } from "react-router-dom";
+import Invoice from "./pages/InvoicePage";
 
 function App() {
   const bgColor = useColorModeValue("gray.lightBg", "gray.darkBg");
@@ -15,7 +17,11 @@ function App() {
       flexDir={{ base: "column", lg: "row" }}
     >
       <Sidebar />
-      <Home invoices={data} />
+      <Routes>
+        <Route path="/:invoiceID" element={<Invoice invoices={data} />} />
+        <Route path="/" element={<Home invoices={data} />} />
+        <Route path="*" element={<Navigate to="/" replace />} />
+      </Routes>
     </HStack>
   );
 }
