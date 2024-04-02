@@ -3,6 +3,7 @@ import { Invoice } from "../hooks/useInvoice";
 import HomeInvoice from "../components/HomeInvoice";
 import HomeHeader from "../components/HomeHeader";
 import { useState } from "react";
+import HomeNoInvoices from "../components/HomeNoInvoices";
 
 interface Props {
   invoices: Invoice[];
@@ -30,11 +31,15 @@ const Home = ({ invoices }: Props) => {
           invoices={filteredInvoices}
           setSelectedStatuses={setSelectedStatuses}
         />
-        <VStack width="100%" gap="1rem">
-          {filteredInvoices.map((invoice) => (
-            <HomeInvoice key={invoice.id} invoice={invoice} />
-          ))}
-        </VStack>
+        {filteredInvoices.length > 0 ? (
+          <VStack width="100%" gap="1rem">
+            {filteredInvoices.map((invoice) => (
+              <HomeInvoice key={invoice.id} invoice={invoice} />
+            ))}
+          </VStack>
+        ) : (
+          <HomeNoInvoices />
+        )}
       </VStack>
     </VStack>
   );

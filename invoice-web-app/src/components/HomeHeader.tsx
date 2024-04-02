@@ -32,7 +32,7 @@ const HomeHeader = ({ invoices, setSelectedStatuses }: Props) => {
           Invoices
         </Text>
         <Text className="body" color={subheaderColor}>
-          {totalInvoicesText}
+          {invoices.length > 0 ? totalInvoicesText : "No invoices"}
         </Text>
       </VStack>
       <HStack gap="2rem">
