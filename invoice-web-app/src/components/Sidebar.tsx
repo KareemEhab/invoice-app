@@ -1,4 +1,4 @@
-import { Divider, Image, VStack, useColorMode } from "@chakra-ui/react";
+import { Divider, Image, Show, VStack, useColorMode } from "@chakra-ui/react";
 import logo from "../assets/logo.svg";
 import moon from "../assets/icon-moon.svg";
 import sun from "../assets/icon-sun.svg";
@@ -58,7 +58,12 @@ const Sidebar = () => {
           cursor="pointer"
           onClick={toggleColorMode}
         />
-        <Divider orientation="vertical" />
+        <Show below="md">
+          <Divider orientation="vertical" />
+        </Show>
+        <Show above="lg">
+          <Divider />
+        </Show>
         <Image maxW="2.5rem" src={userImage} borderRadius="50%" />
       </VStack>
     </VStack>
