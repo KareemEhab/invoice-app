@@ -20,7 +20,12 @@ const Home = ({ invoices }: Props) => {
 
   return (
     <VStack width="100%" minH="100vh" maxH="100vh" overflow="auto">
-      <VStack width="45.6rem" maxW="80%" paddingTop="6rem" gap="4rem">
+      <VStack
+        width="45.6rem"
+        maxW="80vw"
+        paddingTop={{ base: "2rem", lg: "6rem" }}
+        gap="4rem"
+      >
         <HomeHeader
           invoices={filteredInvoices}
           setSelectedStatuses={setSelectedStatuses}

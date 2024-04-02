@@ -9,6 +9,7 @@ import {
   HStack,
   Text,
   useDisclosure,
+  useBreakpointValue,
 } from "@chakra-ui/react";
 import arrowDown from "../assets/icon-arrow-down.svg";
 import arrowUp from "../assets/icon-arrow-up.svg";
@@ -22,6 +23,11 @@ const NavbarMenu = ({ setSelectedStatuses }: Props) => {
   const bgColor = useColorModeValue("white", "black.400");
   const textColor = useColorModeValue("black.600", "white");
   const { isOpen, onToggle } = useDisclosure();
+
+  const menuName = useBreakpointValue({
+    base: "Filter",
+    md: "Filter by status",
+  });
 
   // Initialize state for checkbox statuses
   const [checkboxStatuses, setCheckboxStatuses] = useState<{
@@ -52,7 +58,7 @@ const NavbarMenu = ({ setSelectedStatuses }: Props) => {
     <Menu closeOnSelect={false} closeOnBlur={false}>
       <MenuButton className="hs" color={textColor} onClick={onToggle}>
         <HStack>
-          <Text>Filter by status</Text>
+          <Text>{menuName}</Text>
           <Image src={isOpen ? arrowUp : arrowDown} />
         </HStack>
       </MenuButton>

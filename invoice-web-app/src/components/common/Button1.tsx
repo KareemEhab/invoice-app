@@ -2,14 +2,14 @@ import { Button, HStack, Image, Text } from "@chakra-ui/react";
 import iconPlus from "../../assets/icon-plus.svg";
 
 interface Props {
-  children: string;
+  children: string | undefined;
   onClick: () => void;
 }
 
 const Button1 = ({ children, onClick }: Props) => {
   return (
     <Button
-      width="9.375rem"
+      width={{ base: "5.65rem", md: "9.375rem" }}
       height="3rem"
       bg="purple.800"
       onClick={onClick}
@@ -18,7 +18,7 @@ const Button1 = ({ children, onClick }: Props) => {
       paddingRight={2}
       _hover={{ bg: "purple.700" }}
     >
-      <HStack gap="1rem">
+      <HStack gap={{ base: "0.5rem", md: "1rem" }}>
         <HStack
           width="2rem"
           height="2rem"

@@ -7,7 +7,13 @@ function App() {
   const bgColor = useColorModeValue("gray.lightBg", "gray.darkBg");
 
   return (
-    <HStack minW="100vw" minH="100vh" bg={bgColor} gap={0}>
+    <HStack
+      minW="100vw"
+      minH="100vh"
+      bg={bgColor}
+      gap={0}
+      flexDir={{ base: "column", lg: "row" }}
+    >
       <Sidebar />
       <Home invoices={data} />
     </HStack>
