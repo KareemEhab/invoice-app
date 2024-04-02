@@ -11,3 +11,57 @@ body {
   min-width: 320px;
   min-height: 100vh;
 }
+
+.hl {
+  font-family: "League Spartan", sans-serif;
+  font-weight: bold;
+  font-size: 36px;
+  line-height: 33px;
+  letter-spacing: -1px;
+  color: #0c0e16;
+}
+
+.hm {
+  font-family: "League Spartan", sans-serif;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 22px;
+  letter-spacing: -0.75px;
+  color: #0c0e16;
+}
+
+.hs {
+  font-family: "League Spartan", sans-serif;
+  font-weight: bold;
+  font-size: 15px;
+  line-height: 24px;
+  letter-spacing: -0.25px;
+  color: #0c0e16;
+}
+
+.hsv {
+  font-family: "League Spartan", sans-serif;
+  font-weight: bold;
+  font-size: 15px;
+  line-height: 15px;
+  letter-spacing: -0.25px;
+  color: #0c0e16;
+}
+
+.body {
+  font-family: "League Spartan", sans-serif;
+  font-weight: 500; /* Medium */
+  font-size: 13px;
+  line-height: 18px;
+  letter-spacing: -0.1px;
+  color: #0c0e16;
+}
+
+.bodyv {
+  font-family: "League Spartan", sans-serif;
+  font-weight: 500; /* Medium */
+  font-size: 13px;
+  line-height: 15px;
+  letter-spacing: -0.25px;
+  color: #0c0e16;
+}

@@ -28,7 +28,7 @@ const Button1 = ({ children, onClick }: Props) => {
         >
           <Image src={iconPlus} />
         </HStack>
-        <Text>{children}</Text>
+        <Text color="white">{children}</Text>
       </HStack>
     </Button>
   );

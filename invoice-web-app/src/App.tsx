@@ -1,12 +1,15 @@
-import { HStack } from "@chakra-ui/react";
+import { HStack, useColorModeValue } from "@chakra-ui/react";
 import Home from "./pages/Home";
 import Sidebar from "./components/Sidebar";
+import data from "../data.json";
 
 function App() {
+  const bgColor = useColorModeValue("gray.lightBg", "gray.darkBg");
+
   return (
-    <HStack minW="100vw" minH="100vh" bg="gray.bg">
+    <HStack minW="100vw" minH="100vh" bg={bgColor} gap={0}>
       <Sidebar />
-      {/* <Home /> */}
+      <Home invoices={data} />
     </HStack>
   );
 }

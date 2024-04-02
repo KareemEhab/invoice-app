@@ -11,10 +11,12 @@ const theme = extendTheme({
       800: "#FFFFFF",
     },
     gray: {
-      bg: "#F8F8FB",
+      darkBg: "#141625",
+      lightBg: "#F8F8FB",
       600: "#DFE3FA",
       700: "#373B53",
       800: "#888EB0",
+      900: "#858BB2",
     },
     black: {
       400: "#252945",
@@ -30,6 +32,34 @@ const theme = extendTheme({
     red: {
       main: "#EC5757",
       light: "#9277FF",
+    },
+    status: {
+      paid: {
+        dark: "#33D69F",
+        light: "#33D69F",
+      },
+      pending: {
+        dark: "#FF8F00",
+        light: "#FF8F00",
+      },
+      draft: {
+        dark: "#DFE3FA",
+        light: "#373B53",
+      },
+    },
+    statusbg: {
+      paid: {
+        dark: "rgba(51, 214, 159, 0.0571)",
+        light: "rgba(51, 214, 159, 0.0571)",
+      },
+      pending: {
+        dark: "rgba(255, 143, 0, 0.0571)",
+        light: "rgba(255, 143, 0, 0.0571)",
+      },
+      draft: {
+        dark: "rgba(223, 227, 250, 0.0571)",
+        light: "rgba(55, 59, 83, 0.0571)",
+      },
     },
   },
 });
