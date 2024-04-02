@@ -40,7 +40,7 @@ const HomeInvoice = ({ invoice }: Props) => {
       flexDir={{ base: "column", md: "row" }}
     >
       <HStack
-        width="100%"
+        width={{ base: "100%", md: "fit-content" }}
         gap={{ base: "1rem", lg: "3rem" }}
         justify="space-between"
       >
@@ -62,8 +62,12 @@ const HomeInvoice = ({ invoice }: Props) => {
           {invoice.clientName}
         </Text>
       </HStack>
-      <HStack width="100%">
-        <HStack gap="3rem" justify="space-between" width="100%">
+      <HStack width={{ base: "100%", md: "fit-content" }}>
+        <HStack
+          gap="3rem"
+          justify="space-between"
+          width={{ base: "100%", md: "fit-content" }}
+        >
           <Text className="hs" color={textColor}>
             £ {invoice.total.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
           </Text>
