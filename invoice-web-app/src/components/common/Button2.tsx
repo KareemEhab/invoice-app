@@ -15,7 +15,7 @@ const Button2 = ({ children, onClick }: Props) => {
       borderRadius="full"
       _hover={{ bg: "purple.700" }}
     >
-      <Text>{children}</Text>
+      <Text color="white">{children}</Text>
     </Button>
   );
 };

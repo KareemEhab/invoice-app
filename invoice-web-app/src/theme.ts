@@ -31,7 +31,7 @@ const theme = extendTheme({
     },
     red: {
       main: "#EC5757",
-      light: "#9277FF",
+      light: "#FF9797",
     },
     status: {
       paid: {

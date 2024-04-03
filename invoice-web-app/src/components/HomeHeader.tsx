@@ -26,7 +26,12 @@ const HomeHeader = ({ invoices, setSelectedStatuses }: Props) => {
   });
 
   return (
-    <HStack width="100%" height="3.5rem" justify="space-between">
+    <HStack
+      width="100%"
+      height="3.5rem"
+      justify="space-between"
+      marginTop={{ base: "2rem", lg: "6rem" }}
+    >
       <VStack align="left">
         <Text className={headerClass} color={headerColor}>
           Invoices

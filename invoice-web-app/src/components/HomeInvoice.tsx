@@ -1,15 +1,8 @@
-import {
-  HStack,
-  Image,
-  Show,
-  Text,
-  useColorMode,
-  useColorModeValue,
-} from "@chakra-ui/react";
+import { HStack, Image, Show, Text, useColorModeValue } from "@chakra-ui/react";
 import { Invoice } from "../hooks/useInvoice";
 import arrow from "../assets/icon-arrow-right.svg";
-import { FaCircle } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
+import InvoiceStatus from "./InvoiceStatus";
 
 interface Props {
   invoice: Invoice;
@@ -21,7 +14,6 @@ const HomeInvoice = ({ invoice }: Props) => {
   const dueColor = useColorModeValue("gray.800", "gray.600");
   const dateColor = useColorModeValue("purple.700", "gray.600");
   const clientNameColor = useColorModeValue("gray.900", "white");
-  const { colorMode } = useColorMode();
 
   const navigate = useNavigate();
 
@@ -75,24 +67,7 @@ const HomeInvoice = ({ invoice }: Props) => {
           <Text className="hs" color={textColor}>
             £ {invoice.total.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
           </Text>
-          <HStack
-            width="6.5rem"
-            height="2.5rem"
-            justify="center"
-            bg={`statusbg.${invoice.status}.${colorMode}`}
-            borderRadius="0.5rem"
-          >
-            <HStack textColor={`status.${invoice.status}.${colorMode}`}>
-              <FaCircle fontSize="0.5rem" />
-              <Text
-                className="hs"
-                color={`status.${invoice.status}.${colorMode}`}
-              >
-                {invoice.status.charAt(0).toUpperCase() +
-                  invoice.status.slice(1)}
-              </Text>
-            </HStack>
-          </HStack>
+          <InvoiceStatus invoice={invoice} />
         </HStack>
         <Show above="md">
           <Image src={arrow} cursor="pointer" />
