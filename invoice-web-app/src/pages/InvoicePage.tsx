@@ -10,9 +10,11 @@ import Button5 from "../components/common/Button5";
 
 interface Props {
   invoices: Invoice[];
+  setInvoiceToEdit: (invoice: Invoice) => void;
+  onOpenEditForm: () => void;
 }
 
-const InvoicePage = ({ invoices }: Props) => {
+const InvoicePage = ({ invoices, setInvoiceToEdit, onOpenEditForm }: Props) => {
   const params = useParams();
   const { invoiceID } = params;
   const invoice: Invoice | undefined = invoices.find(
@@ -34,7 +36,11 @@ const InvoicePage = ({ invoices }: Props) => {
     >
       <VStack width="45.6rem" maxW="80vw" gap="1.5rem" align="left">
         <GoBackBtn />
-        <InvoiceStatusControl invoice={invoice} />
+        <InvoiceStatusControl
+          invoice={invoice}
+          setInvoiceToEdit={setInvoiceToEdit}
+          onOpenEditForm={onOpenEditForm}
+        />
         <InvoiceDetails invoice={invoice} />
       </VStack>
       <Show below="sm">

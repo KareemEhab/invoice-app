@@ -7,9 +7,15 @@ import Button2 from "./common/Button2";
 
 interface Props {
   invoice: Invoice;
+  setInvoiceToEdit: (invoice: Invoice) => void;
+  onOpenEditForm: () => void;
 }
 
-const InvoiceStatusControl = ({ invoice }: Props) => {
+const InvoiceStatusControl = ({
+  invoice,
+  setInvoiceToEdit,
+  onOpenEditForm,
+}: Props) => {
   const bgColor = useColorModeValue("white", "black.500");
   const textColor = useColorModeValue("gray.800", "gray.600");
 
@@ -34,7 +40,14 @@ const InvoiceStatusControl = ({ invoice }: Props) => {
       </HStack>
       <Show above="md">
         <HStack>
-          <Button3 onClick={() => {}}>Edit</Button3>
+          <Button3
+            onClick={() => {
+              setInvoiceToEdit(invoice);
+              onOpenEditForm();
+            }}
+          >
+            Edit
+          </Button3>
           <Button5 onClick={() => {}}>Delete</Button5>
           <Button2 onClick={() => {}}>Mark as Paid</Button2>
         </HStack>

@@ -12,9 +12,10 @@ import HomeHeaderMenu from "./HomeHeaderMenu";
 interface Props {
   invoices: Invoice[];
   setSelectedStatuses: (newStatuses: string[]) => void;
+  newInvoice: () => void;
 }
 
-const HomeHeader = ({ invoices, setSelectedStatuses }: Props) => {
+const HomeHeader = ({ invoices, setSelectedStatuses, newInvoice }: Props) => {
   const headerColor = useColorModeValue("black.600", "white");
   const subheaderColor = useColorModeValue("gray.800", "gray.600");
 
@@ -42,7 +43,7 @@ const HomeHeader = ({ invoices, setSelectedStatuses }: Props) => {
       </VStack>
       <HStack gap="2rem">
         <HomeHeaderMenu setSelectedStatuses={setSelectedStatuses} />
-        <Button1 onClick={() => {}}>{buttonText}</Button1>
+        <Button1 onClick={newInvoice}>{buttonText}</Button1>
       </HStack>
     </HStack>
   );

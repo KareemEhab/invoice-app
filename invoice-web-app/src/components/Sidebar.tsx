@@ -18,6 +18,7 @@ const Sidebar = () => {
       paddingBottom={{ lg: "1rem" }}
       paddingRight={{ base: "1rem", lg: 0 }}
       flexDir={{ base: "row", lg: "column" }}
+      zIndex={2}
     >
       <VStack
         width={{ base: "4.5rem", md: "5rem", lg: "6.44rem" }}

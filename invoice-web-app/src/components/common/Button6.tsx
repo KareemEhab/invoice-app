@@ -1,4 +1,4 @@
-import { Button, Text } from "@chakra-ui/react";
+import { Button, Text, useColorModeValue } from "@chakra-ui/react";
 
 interface Props {
   children: string;
@@ -6,15 +6,17 @@ interface Props {
 }
 
 const Button6 = ({ children, onClick }: Props) => {
+  const bgColor = useColorModeValue("white", "black.500");
+  const hoverColor = useColorModeValue("gray.600", "black.600");
   return (
     <Button
-      width="21.875rem"
+      width="100%"
       height="3rem"
-      bg="white.700"
+      bg={bgColor}
       onClick={onClick}
       borderRadius="full"
       border="none"
-      _hover={{ bg: "gray.600" }}
+      _hover={{ bg: hoverColor }}
     >
       <Text color="purple.900">{children}</Text>
     </Button>

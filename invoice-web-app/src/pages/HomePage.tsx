@@ -7,9 +7,10 @@ import HomeNoInvoices from "../components/HomeNoInvoices";
 
 interface Props {
   invoices: Invoice[];
+  newInvoice: () => void;
 }
 
-const HomePage = ({ invoices }: Props) => {
+const HomePage = ({ invoices, newInvoice }: Props) => {
   const [selectedStatuses, setSelectedStatuses] = useState([
     "draft",
     "pending",
@@ -25,6 +26,7 @@ const HomePage = ({ invoices }: Props) => {
         <HomeHeader
           invoices={filteredInvoices}
           setSelectedStatuses={setSelectedStatuses}
+          newInvoice={newInvoice}
         />
         {filteredInvoices.length > 0 ? (
           <VStack width="100%" gap="1rem">
